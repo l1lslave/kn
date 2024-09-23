@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../leaf_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100 px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    position: relative;
+    left: 30px;
+    font-size: 2em;
+    color: aliceblue;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 60px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: aliceblue;
+    transform: scaleX(0);
+    transition: transform .4s;
+}
+.navigation a:hover::after{
+    transform: scaleX(1);
+}
+.navigation .LoginButton {
+    position: relative;
+    right: 30px;
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid aliceblue;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .4s;
+}
+.navigation .LoginButton:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+.wrapper{
+    position: relative;
+    background: transparent;
+    height: 450px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .2s ease, height .5s ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 530px;
+}
+
+.wrapper .LoginFrame{
+    width: 100%;
+    padding: 70px;
+}
+
+.wrapper .LoginFrame.login {
+    transition: transform .20s ease;
+    transform: translateX(0);
+}
+.wrapper.active .LoginFrame.login {
+    position: absolute;
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .LoginFrame.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .LoginFrame.register {
+    transition: transform .20s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: rgb(68, 109, 68);
+    border-radius: 5px;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.LoginFrame h2{
+    font-size: 2em;
+    color: aliceblue;
+    text-align: center;
+}
+.input-box {
+    color: aliceblue;
+    position: relative;
+    width: 100%;
+    height: 50px;;
+    border-bottom: 2px solid aliceblue;
+    margin: 30px 0;
+} 
+
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .2s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: aliceblue;
+}
+.remember-forgot{
+    color:aliceblue;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    position: realtive;
+    top: 390px;
+    width: 255px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background: rgb(68, 109, 68);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(17, 27, 18);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+.login-registerLog{
+    position: absolute;
+    top: 350px;
+    font-size: 12px;
+    color: aliceblue;
+    text-align: center;
+    font-weight: 500;
+}
+.login-registerLog p a {
+    color: rgb(124, 179, 42);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-registerLog p a:hover {
+    text-decoration: underline;
+}
+.login-registerReg{
+    position: absolute;
+    top: 430px;
+    font-size: 12px;
+    color: aliceblue;
+    text-align: center;
+    font-weight: 500;
+}
+.login-registerReg p a {
+    color: rgb(124, 179, 42);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-registerReg p a:hover {
+    text-decoration: underline;
+}
+.input-box .iconLog {
+    position: absolute;
+    right: 8px;
+    top: 15px;
+    font-size:  1.2em;
+    color: aliceblue
+}
